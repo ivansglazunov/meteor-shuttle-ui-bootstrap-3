@@ -1,0 +1,17 @@
+<template name="ShuttleSearchInput">
+    {{! index: EasySearchIndex, attributes?: Object }}
+    {{> EasySearch.Input index=index attributes=_attributes }}
+</template>
+<template name="ShuttleSearchItems">
+    {{! source: Document, index: EasySearchIndex, tree: Mongo.Collection }}
+    {{! multiple: Boolean = false, ignoreInherited: Boolean = true }}
+    {{#EasySearch.Each index=index }}
+        {{> ShuttleSearchItem document=this source=(../../source) tree=(../../tree) }}
+    {{/EasySearch.Each}}
+</template>
+<template name="ShuttleSearchItem">
+    {{! document: Document, source: Document, tree: Mongo.Collection }}
+    <a href="#" class="shuttle-ui-bootstrap-3-search-item list-group-item {{#if hasLink}}disabled{{/if}}" style="cursor: pointer;">
+        {{> Templater document=document type="ShuttleSearchItem"}}
+    </a>
+</template>

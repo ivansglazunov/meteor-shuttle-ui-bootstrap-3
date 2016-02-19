@@ -1,0 +1,23 @@
+<template name="ShuttleLinks">
+    {{! source: Document, tree: Mongo.Collection }}
+    {{! removing: Boolean = true, removingInherited: Boolean = false, inherited: Boolean = true }}
+    {{! class: String = "btn btn-default"}}
+    {{#if tree}}
+        {{#each links}}
+            {{>ShuttleLinksLink document=this}}
+        {{/each}}
+        {{> UI.contentBlock}}
+    {{/if}}
+</template>
+<template name="ShuttleLinksLink">
+    <div class="btn-group">
+        {{> Templater document=document.target type="ShuttleLinksLink" class=(../../class)}}
+    	{{#unless document._inherit}}
+    	    {{#if Shuttle.can Shuttle.Owning (../../source) Meteor.user}}
+        		{{# quickRemoveButton collection=(../../tree) _id=document._id class=(../../class)}}
+        			<i class="fa fa-times text-danger"></i>
+        		{{/quickRemoveButton}}
+    		{{/if}}
+    	{{/unless}}
+    </div>
+</template>
