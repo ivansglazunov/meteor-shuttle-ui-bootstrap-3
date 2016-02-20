@@ -1,6 +1,6 @@
 Package.describe({
   name: 'ivansglazunov:shuttle-ui-bootstrap-3',
-  version: '0.0.3',
+  version: '0.0.4',
   summary: 'The basic elements of the interface to work with links in the trees.',
   git: 'https://github.com/ivansglazunov/meteor-shuttle-ui-bootstrap-3.git',
   documentation: 'README.md'
