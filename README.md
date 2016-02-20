@@ -22,7 +22,7 @@ Required package [easy:search](https://github.com/matteodem/meteor-easy-search) 
 
 In example required package [ivansglazunov:dropdowns-bootstrap-3](https://github.com/ivansglazunov/meteor-dropdowns-bootstrap-3).
 
-### Panel with links as dropdown trigger.
+### Panel with links as dropdown trigger
 
 ```html
 {{#dropdownTrigger name="uniqueName" }}
@@ -33,7 +33,7 @@ In example required package [ivansglazunov:dropdowns-bootstrap-3](https://github
 {{/dropdownBootstrap}}
 ```
 
-### Button as trigger for dropdown with links.
+### Button as trigger for dropdown with links
 
 ```html
 {{#dropdownTrigger name="uniqueName2" }}
@@ -41,6 +41,19 @@ In example required package [ivansglazunov:dropdowns-bootstrap-3](https://github
 {{/dropdownTrigger}}
 {{#dropdownBootstrap name="uniqueName2" direction="s"}}
 	{{> ShuttleDropdown source=user index=Meteor.users.Index tree=Shuttle.Fetching}}
+{{/dropdownBootstrap}}
+```
+
+### With header
+
+```html
+{{#dropdownTrigger name="uniqueName2" }}
+	<button class="btn btn-link">Fetching</button>
+{{/dropdownTrigger}}
+{{#dropdownBootstrap name="uniqueName2" direction="s"}}
+	{{# ShuttleDropdown source=user index=Meteor.users.Index tree=Shuttle.Fetching}}
+		<h3 class="popover-title">Fetching</h3>
+	{{/ ShuttleDropdown}}
 {{/dropdownBootstrap}}
 ```
 
@@ -106,7 +119,10 @@ It contains the active user and the cursor `Shuttle.groups`.
 
 ## Versions
 
+### 0.0.3
+* `Template.ShuttleDropdown` with `UI.contentBlock`
+
 ### 0.0.1
-* `ShuttleSearchDefault`
+* `Template.ShuttleSearchDefault`
 * `Template.ShuttleDropdown`
 * `Template.ShuttleLinksPanel`
