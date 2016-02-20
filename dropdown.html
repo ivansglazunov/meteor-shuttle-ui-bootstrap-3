@@ -6,7 +6,8 @@
     {{! removing: Boolean = true }}
     {{! removingInherited: Boolean = false }}
     {{! inherited: Boolean = true }}
-    {{! template?: String = "ShuttleSearchDefault" }}
+    {{! defaultTemplate?: String = "ShuttleSearchDefault" }}
+    {{! inputTemplate?: String = "ShuttleSearchInput" }}
     {{! class?: String = "btn btn-default btn-sm" }}
     
     <div class="well-sm">
@@ -15,7 +16,7 @@
 		{{/unless}}
 		{{#unless $eq search false}}
     		<div class="input-group">
-    			{{> ShuttleSearchInput index=index}}
+    			{{> Template.dynamic template=(inputTemplate) data=(this)}}
     			<span class="input-group-addon"><i class="fa fa-fw fa-search"></i></span>
     		</div>
     		<div class="list-group" style="margin: 1em 0 0 0;">

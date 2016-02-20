@@ -16,7 +16,8 @@ Required package [easy:search](https://github.com/matteodem/meteor-easy-search) 
 > removing: Boolean = true
 > removingInherited: Boolean = false
 > inherited: Boolean = true
-> template?: String = "ShuttleSearchDefault"
+> defaultTemplate?: String = "ShuttleSearchDefault"
+> inputTemplate?: String = "ShuttleSearchInput"
 > class?: String = "btn btn-default btn-sm"
 
 In example required package [ivansglazunov:dropdowns-bootstrap-3](https://github.com/ivansglazunov/meteor-dropdowns-bootstrap-3).
