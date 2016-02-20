@@ -1,0 +1,30 @@
+<template name="ShuttleDropdown">
+    {{! source: Document }}
+    {{! tree: Mongo.Collection }}
+    {{! links: Boolean == true }}
+    {{! search: Boolean = true }}
+    {{! removing: Boolean = true }}
+    {{! removingInherited: Boolean = false }}
+    {{! inherited: Boolean = true }}
+    {{! template?: String = "ShuttleSearchDefault" }}
+    {{! class?: String = "btn btn-default btn-sm" }}
+    
+    <div class="well-sm">
+        {{#unless $eq links false}}
+			{{> ShuttleLinksPanel}}
+		{{/unless}}
+		{{#unless $eq search false}}
+    		<div class="input-group">
+    			{{> ShuttleSearchInput index=index}}
+    			<span class="input-group-addon"><i class="fa fa-fw fa-search"></i></span>
+    		</div>
+    		<div class="list-group" style="margin: 1em 0 0 0;">
+    			{{#EasySearch.IfInputEmpty index=(index)}}
+        			{{> Template.dynamic template=(defaultTemplate) data=(..)}}
+    			{{else}}
+    				{{> ShuttleSearchItems source=(../source) index=(../index) tree=(../tree)}}
+    			{{/EasySearch.IfInputEmpty}}
+    		</div>
+		{{/unless}}
+    </div>
+</template>
