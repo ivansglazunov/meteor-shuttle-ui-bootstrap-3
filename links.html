@@ -20,7 +20,7 @@
     {{! inherited: Boolean = true }}
     {{! class?: String = "btn btn-default btn-sm" }}
 	<div class="panel panel-default">
-		<div class="panel-body well-sm">
+		<div class="panel-body well-sm shuttle-ui-bootstrap-3-links">
 			{{# ShuttleLinks}}
 			    {{> UI.contentBlock}}
 			{{/ ShuttleLinks}}
@@ -28,13 +28,15 @@
 	</div>
 </template>
 <template name="ShuttleLinksLink">
-    <div class="btn-group">
+    <div class="btn-group shuttle-ui-bootstrap-3-links-link">
         {{> Templater document=document.target type="ShuttleLinksLink" class=class}}
     	{{#unless document._inherit}}
-    	    {{#if Shuttle.can Shuttle.Owning (../../source) Meteor.user}}
-        		{{# quickRemoveButton collection=(../../tree) _id=document._id class=class}}
-        			<i class="fa fa-times text-danger"></i>
-        		{{/quickRemoveButton}}
+    	    {{#if Shuttle.can 'delete' document Meteor.user}}
+        		{{#delete document=document}}
+        		    <button class={{class}}>
+            			<i class="fa fa-times text-danger"></i>
+        		    </button>
+        		{{/delete}}
     		{{/if}}
     	{{/unless}}
     </div>

@@ -1,6 +1,6 @@
 Package.describe({
   name: 'ivansglazunov:shuttle-ui-bootstrap-3',
-  version: '0.0.4',
+  version: '0.0.5',
   summary: 'The basic elements of the interface to work with links in the trees.',
   git: 'https://github.com/ivansglazunov/meteor-shuttle-ui-bootstrap-3.git',
   documentation: 'README.md'
@@ -27,11 +27,12 @@ Package.onUse(function(api) {
   api.use('raix:handlebar-helpers@0.2.5');
   api.use('lookback:dropdowns@1.3.0');
   
-  api.use('ivansglazunov:shuttle@0.1.0');
+  api.use('ivansglazunov:shuttle@0.1.1');
   api.use('ivansglazunov:templater@0.0.2');
 
   api.addFiles('links.html', 'client');
   api.addFiles('links.js', 'client');
+  api.addFiles('links.less', 'client');
   api.addFiles('search.html', 'client');
   api.addFiles('search.less', 'client');
   api.addFiles('search.js', 'client');

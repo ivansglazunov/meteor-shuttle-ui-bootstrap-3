@@ -18,7 +18,7 @@ Template.ShuttleSearchItem.events({
 	    template.data.tree.addLink(template.data.source, template.data.document);
 	},
 	'click >a.list-group-item.disabled': function(event, template) {
-		template.data.tree.remove(
+		template.data.tree.delete(
 		    template.data.tree.link(template.data.source, template.data.document)._id
 		);
 	}

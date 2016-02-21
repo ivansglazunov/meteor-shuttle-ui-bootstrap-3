@@ -119,6 +119,11 @@ It contains the active user and the cursor `Shuttle.groups`.
 
 ## Versions
 
+### 0.0.5
+* Support `ivansglazunov:delete`
+* Remove not supported
+* Support `ivansglazunov:restrict`
+
 ### 0.0.3
 * `Template.ShuttleDropdown` with `UI.contentBlock`
 
